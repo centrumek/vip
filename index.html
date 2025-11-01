@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pl" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nasze Wesele - Viktoria & Paweł</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="css/leaflet.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#start">
+            <img src="assets/logo-bl.svg" alt="Logo" class="logo-navbar me-2">
+            <span>Viktoria & Paweł</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#start">START</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#o-nas">O NAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#co-kiedy">CO I KIEDY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#swiadkowie">ŚWIADKOWIE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nasze-zdjecia">NASZE ZDJĘCIA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Start Section -->
+<div id="start">
+    <div class="container text-center">
+        <img src="assets/logo-wh.svg" alt="Logo Viktoria & Paweł" class="logo-hero mb-4 logo-start">
+        <p class="lead fs-3 mb-5 fade-in-start">Pobieramy się!</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-wrapper mb-5 fade-in-start">
+            <div id="countdown" class="d-flex justify-content-center gap-3 flex-wrap">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">0</div>
+                    <div class="countdown-label">Dni</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">0</div>
+                    <div class="countdown-label">Godzin</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">0</div>
+                    <div class="countdown-label">Minut</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">0</div>
+                    <div class="countdown-label">Sekund</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add to Google Calendar Button -->
+        <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Viktoria+i+Pawe%C5%82+bior%C4%85+%C5%9Alub%21&dates=20260604T120000Z/20260604T130000Z&details=Viktoria+i+Pawe%C5%82+powiedz%C4%85+sobie+%E2%80%9Etak%E2%80%9D%2C+%C5%82%C4%85cz%C4%85c+swoje+serca+i+%C5%BCycie+na+zawsze.+Ten+dzie%C5%84+b%C4%99dzie+pocz%C4%85tkiem+ich+wsp%C3%B3lnej+drogi+pe%C5%82nej+mi%C5%82o%C5%9Bci%2C+szcz%C4%99%C5%9Bcia+i+pi%C4%99knych+chwil.&location=Ko%C5%9Bci%C3%B3%C5%82+MB+Cz%C4%99stochowskiej+w+Kossowie%2C+26%2C+29-135+Koss%C3%B3w%2C+Polska"
+           target="_blank"
+           class="btn btn-light btn-lg fade-in-start">
+            📅 Dodaj do kalendarza Google
+        </a>
+    </div>
+</div>
+
+<!-- O nas Section -->
+<section id="o-nas">
+    <div class="container">
+        <div class="row">
+            <h2 class="display-4 text-center mb-4">O nas</h2>
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="lead mb-4">
+                    Spotkaliśmy się pod Wawelem, gdy Paweł podszedł i zagadał - od tamtej pory każde spotkanie umacniało Nas ku sobie!
+                    Od 2019 roku idziemy razem przez podróże, joga, kuchenne eksperymenty, rowery i plany, które zamieniamy w działanie.
+                </p>
+                <p class="lead">
+                    Paweł w Naszej dwójce odpowiada za spokój i szczegóły, a Viktoria za kierunek wiatru, cele i talent do negocjacji.
+                    W domu mówimy na siebie Bubuś :> i Pimpuś :), a hasło - „czaaas naaa przyyytulas” to Nasz znak.
+                </p>
+                <p class="lead">
+                    Chcemy tworzyć Naszą rodzinkę - długo, szczęśliwie i razem, jak papużki nierozłączki.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Co i kiedy Section -->
+<section id="co-kiedy">
+    <div class="container">
+        <div class="row g-4">
+            <h2 class="display-4 text-center mb-5">Co i Kiedy</h2>
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <img src="assets/calendar.svg" alt="Kalendarz" class="mb-4"
+                             style="width: 130px; height: 130px;">
+                        <h4 class="card-title mb-1">Ślub</h4>
+                        <p class="card-text mb-0">4 czerwca</p>
+                        <small class="text-muted">2026</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <img src="assets/church.svg" alt="Kościół" class="mb-4" style="width: 130px; height: 130px;">
+                        <h4 class="card-title mb-1">Kościół MB Częstochowskiej</h4>
+                        <p class="card-text mb-0">
+                            <a href="https://www.google.com/maps?q=Kościół+MB+Częstochowskiej+w+Kossowie+26+29-135+Kossów"
+                               target="_blank" rel="noopener" class="maps-link">
+                                Kossów, 26, 29-135 Kossów
+                            </a>
+                        </p>
+                        <small class="text-muted">14:00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <img src="assets/barn.svg" alt="Sala weselna" class="mb-4" style="width: 130px; height: 130px;">
+                        <h4 class="card-title mb-1">Stodoła Ogarka</h4>
+                        <p class="card-text mb-0">
+                            <a href="https://www.google.com/maps?q=Stodoła+Ogarka+Ogarka+33+29-100+Ogarka"
+                               target="_blank" rel="noopener" class="maps-link">
+                                Ogarka 33, 29-100 Ogarka
+                            </a>
+                        </p>
+                        <small class="text-muted">16:00 - ∞</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map"
+             style="width: 100%; height: 400px; margin-top: 40px; border-radius: 16px; overflow: hidden;"></div>
+    </div>
+</section>
+
+<!-- Świadkowie Section -->
+<section id="swiadkowie">
+    <div class="container">
+        <div class="row">
+            <h2 class="display-4 text-center mb-5">Świadkowie</h2>
+            <div class="col-lg-10 mx-auto">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card text-center h-100 swiadek-box">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="rounded-circle bg-secondary d-inline-block overflow-hidden">
+                                        <img src="assets/agata.png" alt="Agata Petrovschi" class="swiadek-img">
+                                    </div>
+                                </div>
+                                <h3 class="card-title">Agata Petrovschi</h3>
+                                <p class="card-text text-muted">Świadkowa Viktorii</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card text-center h-100 swiadek-box">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="rounded-circle bg-secondary d-inline-block overflow-hidden">
+                                        <img src="assets/donat.png" alt="Donat Cupiał" class="swiadek-img">
+                                    </div>
+                                </div>
+                                <h3 class="card-title">Donat Cupiał</h3>
+                                <p class="card-text text-muted">Świadek Pawła</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Nasze Zdjęcia Section -->
+<section id="nasze-zdjecia">
+    <div class="container">
+        <div class="row">
+            <h2 class="display-4 text-center mb-5">Nasze Zdjęcia</h2>
+            <div class="col-lg-12 mx-auto">
+                <div id="carousel3D" class="carousel-3d-container">
+                    <div class="carousel-3d-wrapper">
+                        <div class="carousel-3d-item active">
+                            <img src="assets/carousel/1.jpeg" alt="Zdjęcie 1">
+                        </div>
+                        <div class="carousel-3d-item next-1">
+                            <img src="assets/carousel/2.jpeg" alt="Zdjęcie 2">
+                        </div>
+                        <div class="carousel-3d-item next-2">
+                            <img src="assets/carousel/3.jpeg" alt="Zdjęcie 3">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/4.jpeg" alt="Zdjęcie 4">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/5.jpeg" alt="Zdjęcie 5">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/6.jpeg" alt="Zdjęcie 6">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/7.jpeg" alt="Zdjęcie 7">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/8.jpeg" alt="Zdjęcie 8">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/9.jpeg" alt="Zdjęcie 9">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/10.jpeg" alt="Zdjęcie 10">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/11.jpeg" alt="Zdjęcie 11">
+                        </div>
+                        <div class="carousel-3d-item hidden">
+                            <img src="assets/carousel/12.jpeg" alt="Zdjęcie 12">
+                        </div>
+                    </div>
+                    <button class="carousel-3d-control prev" onclick="moveCarousel3D(-1)">‹</button>
+                    <button class="carousel-3d-control next" onclick="moveCarousel3D(1)">›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 text-center">
+    <p class="mb-0">&copy; 2025 Viktoria & Paweł - Do zobaczenia na weselu!</p>
+</footer>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+<!-- Leaflet JS -->
+<script src="js/leaflet.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="js/script.js"></script>
+</body>
+</html>

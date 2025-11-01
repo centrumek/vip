@@ -1,0 +1,384 @@
+body {
+    position: relative;
+}
+
+/* 3D Carousel z efektem zoom */
+.carousel-3d-container {
+    position: relative;
+    height: 500px;
+    perspective: 1200px;
+    overflow: visible;
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel-3d-container:active {
+    cursor: grabbing;
+}
+
+.carousel-3d-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-3d-item {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-3d-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pozycje zdjęć */
+.carousel-3d-item.active {
+    z-index: 10;
+    transform: translateX(0) scale(1.15);
+    opacity: 1;
+}
+
+.carousel-3d-item.prev-1 {
+    z-index: 5;
+    transform: translateX(-320px) scale(0.85);
+    opacity: 0.7;
+}
+
+.carousel-3d-item.prev-2 {
+    z-index: 4;
+    transform: translateX(-550px) scale(0.65);
+    opacity: 0.4;
+}
+
+.carousel-3d-item.next-1 {
+    z-index: 5;
+    transform: translateX(320px) scale(0.85);
+    opacity: 0.7;
+}
+
+.carousel-3d-item.next-2 {
+    z-index: 4;
+    transform: translateX(550px) scale(0.65);
+    opacity: 0.4;
+}
+
+.carousel-3d-item.hidden {
+    z-index: 1;
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-3d-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.carousel-3d-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-3d-control.prev {
+    left: 20px;
+}
+
+.carousel-3d-control.next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .carousel-3d-container {
+        height: 300px;
+    }
+    
+    .carousel-3d-item {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .carousel-3d-item.active {
+        transform: translateX(0) scale(1.1);
+    }
+    
+    .carousel-3d-item.prev-1 {
+        transform: translateX(-180px) scale(0.8);
+    }
+    
+    .carousel-3d-item.next-1 {
+        transform: translateX(180px) scale(0.8);
+    }
+    
+    .carousel-3d-item.prev-2,
+    .carousel-3d-item.next-2 {
+        opacity: 0;
+        transform: translateX(0) scale(0.5);
+    }
+}
+
+#start, section {
+    display: flex;
+    align-items: center;
+    position: relative; /* dodaj, jeśli nie ma */
+}
+
+section {
+    padding-top: 280px;
+    padding-bottom: 180px;
+    background-color: white;
+}
+
+section:not(:first-of-type):before {
+    content: '';
+    background: url(../assets/girlandy.svg);
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-size: cover;
+    height: 10vw; /* wysokość zależna od szerokości okna */
+    min-height: 100px; /* minimalna wysokość */
+    max-height: 183px;
+    width: 100%;
+    position: absolute; /* zmiana z relative */
+    top: -1px; /* wysokość nad sekcją */
+    left: 0;
+    z-index: 2; /* nad sekcją */
+    display: block;
+    pointer-events: none;
+}
+
+#start {
+    min-height: 100vh;
+    color: white;
+    overflow: hidden; /* żeby tło nie wychodziło poza element */
+}
+
+#start::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
+    url("../assets/start.jpg") center/cover no-repeat;
+    filter: blur(3px);
+    transform: scale(1.01); /* kompensuje brzegi rozmycia */
+    z-index: -1; /* żeby nie zasłaniało tekstu */
+}
+
+/* Countdown Timer Styles */
+.countdown-wrapper {
+    padding: 20px;
+}
+
+.countdown-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes logoFadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-start {
+    opacity: 0;
+    animation: logoFadeInDown 1s ease forwards;
+    height: 200px;
+    width: auto;
+}
+
+.fade-in-start {
+    opacity: 0;
+    animation: fadeInStart 1s ease forwards;
+}
+
+@keyframes fadeInStart {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo-navbar {
+    height: 40px;
+    width: auto;
+    color: white;
+}
+
+.navbar {
+    background: transparent !important;
+    box-shadow: none;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar-brand {
+    color: black !important;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.navbar-brand:hover {
+    color: #333 !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: black !important;
+}
+
+.maps-link {
+    text-decoration: underline;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.maps-link:hover {
+    color: #828282;
+}
+
+.pulse {
+    animation: heartbeat 1s ease;
+}
+
+@media (max-width: 576px) {
+    .countdown-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+}
+
+.swiadek-box {
+    padding: 32px 16px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.swiadek-img {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+}
+
+.swiadek-box .rounded-circle {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 3rem;
+}
+
+/* Animacje dla sekcji przy scrollu */
+.section-hidden {
+    opacity: 0;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(-80px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+@media (min-width: 768px) {
+    .swiadek-box {
+        padding: 40px 24px;
+    }
+    .swiadek-box .rounded-circle {
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .swiadek-box {
+        padding: 56px 32px;
+    }
+    .swiadek-box .rounded-circle {
+        width: 180px;
+        height: 180px;
+        line-height: 180px;
+        font-size: 4rem;
+    }
+}
