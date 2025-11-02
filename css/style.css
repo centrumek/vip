@@ -91,7 +91,6 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    cursor: pointer;
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -112,32 +111,107 @@ body {
     right: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1380px) {
     .carousel-3d-container {
         height: 300px;
     }
-    
+
     .carousel-3d-item {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
-    
+
     .carousel-3d-item.active {
         transform: translateX(0) scale(1.1);
     }
-    
+
     .carousel-3d-item.prev-1 {
         transform: translateX(-180px) scale(0.8);
     }
-    
+
     .carousel-3d-item.next-1 {
         transform: translateX(180px) scale(0.8);
     }
-    
+
     .carousel-3d-item.prev-2,
     .carousel-3d-item.next-2 {
         opacity: 0;
         transform: translateX(0) scale(0.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-3d-container {
+        height: 300px;
+    }
+
+    .carousel-3d-item {
+        width: 250px;
+        height: 250px;
+    }
+
+    .carousel-3d-item.active {
+        transform: translateX(0) scale(1.1);
+    }
+
+    .carousel-3d-item.prev-1 {
+        transform: translateX(-180px) scale(0.8);
+    }
+
+    .carousel-3d-item.next-1 {
+        transform: translateX(180px) scale(0.8);
+    }
+
+    .carousel-3d-item.prev-2,
+    .carousel-3d-item.next-2 {
+        opacity: 0;
+        transform: translateX(0) scale(0.5);
+    }
+}
+
+@media (max-width: 580px) {
+    .carousel-3d-container {
+        height: 280px;
+    }
+
+    .carousel-3d-item {
+        width: 75vw;
+        height: 75vw;
+        max-width: 260px;
+        max-height: 260px;
+    }
+
+    .carousel-3d-item.active {
+        transform: translateX(0) scale(1);
+    }
+
+    .carousel-3d-item.prev-1 {
+        transform: translateX(-80px) scale(0.8);
+        opacity: 0.4;
+    }
+
+    .carousel-3d-item.next-1 {
+        transform: translateX(80px) scale(0.8);
+        opacity: 0.4;
+    }
+
+    .carousel-3d-item.prev-2,
+    .carousel-3d-item.next-2 {
+        opacity: 0 !important;
+    }
+
+    .carousel-3d-control {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .carousel-3d-control.prev {
+        left: 5px;
+    }
+
+    .carousel-3d-control.next {
+        right: 5px;
     }
 }
 
@@ -175,6 +249,7 @@ section:not(:first-of-type):before {
     min-height: 100vh;
     color: white;
     overflow: hidden; /* żeby tło nie wychodziło poza element */
+    padding-top: 80px;
 }
 
 #start::before {
@@ -257,6 +332,12 @@ section:not(:first-of-type):before {
     width: auto;
 }
 
+@media (max-width: 500px) {
+    .logo-start {
+        height: 150px;
+    }
+}
+
 .fade-in-start {
     opacity: 0;
     animation: fadeInStart 1s ease forwards;
@@ -277,6 +358,16 @@ section:not(:first-of-type):before {
     background: transparent !important;
     box-shadow: none;
     transition: background 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 991px) {
+    .navbar .container {
+        max-width: none;
+    }
+    
+    .navbar-toggler {
+        margin-right: 0;
+    }
 }
 
 .navbar-brand {
@@ -324,6 +415,21 @@ section:not(:first-of-type):before {
 
     .countdown-label {
         font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .countdown-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .countdown-number {
+        font-size: 1rem;
+    }
+
+    .countdown-label {
+        font-size: 0.4rem;
     }
 }
 
