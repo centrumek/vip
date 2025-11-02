@@ -41,22 +41,40 @@ function initWeddingMap() {
 
     const map = L.map('map').setView(center, 12);
 
-    fetch('../assets/swietokrzyskie.geojson')
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                style: {
-                    color: '#3388ff',
-                    weight: 2,
-                    fillColor: '#e0eaff',
-                    fillOpacity: 0.4
-                }
-            }).addTo(map);
-        });
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
+    const myRenderer = L.canvas({ padding: 0.5 });
+
+    fetch('../assets/swietokrzyskie.geojson')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('GeoJSON not found');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.type) {
+                const geoJsonData = data.type === 'Polygon' ? {
+                    type: 'Feature',
+                    geometry: data
+                } : data;
+                
+                L.geoJSON(geoJsonData, {
+                    style: {
+                        color: '#3388ff',
+                        weight: 2,
+                        fillColor: '#e0eaff',
+                        fillOpacity: 0.4
+                    },
+                    renderer: myRenderer
+                }).addTo(map);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading GeoJSON:', error);
+        });
 
     L.marker(church).addTo(map)
         .bindTooltip('Kościół MB Częstochowskiej', {
