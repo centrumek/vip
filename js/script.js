@@ -31,7 +31,7 @@ function updateCountdown() {
 
 // Wedding OpenStreetMap
 function initWeddingMap() {
-    const church = [50.7682, 20.0881];
+    const church = [50.6532591, 20.0991871];
     const barn = [50.8000, 20.0500];
 
     const center = [
@@ -39,7 +39,7 @@ function initWeddingMap() {
         (church[1] + barn[1]) / 2
     ];
 
-    const map = L.map('map').setView(center, 12);
+    const map = L.map('map').setView(center, 9);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
@@ -77,7 +77,7 @@ function initWeddingMap() {
         });
 
     L.marker(church).addTo(map)
-        .bindTooltip('Kościół MB Częstochowskiej', {
+        .bindTooltip('Kościół św. Stanisława BM w Rakoszynie', {
             permanent: true,
             direction: 'top',
             className: 'marker-tooltip'
