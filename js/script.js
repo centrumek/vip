@@ -1,5 +1,5 @@
 // Wedding Countdown Timer
-var weddingDate = new Date("June 4, 2026 14:00:00").getTime();
+var weddingDate = new Date("June 4, 2026 15:00:00").getTime();
 var prevSeconds = null;
 
 function updateCountdown() {
