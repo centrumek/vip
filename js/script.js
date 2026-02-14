@@ -163,6 +163,26 @@ function updateCarousel3D() {
     });
 }
 
+// Calendar button - hybrid approach (mobile: .ics, desktop: Google Calendar)
+function initCalendarButton() {
+    const calendarButton = document.getElementById('calendar-button');
+    if (!calendarButton) return;
+
+    // Detect mobile devices including iPad (which may report desktop UA on iPadOS 13+)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        || (navigator.maxTouchPoints && navigator.maxTouchPoints > 1) // Touch-capable devices
+        || /iPad|iPhone|iPod/.test(navigator.platform) // Explicit iOS platform check
+        || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPad with iPadOS 13+
+    
+    if (!isMobile) {
+        // Desktop: use Google Calendar link
+        const googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Viktoria+i+Pawe%C5%82+bior%C4%85+%C5%9Alub%21&dates=20260604T130000Z/20260604T140000Z&details=Viktoria+i+Pawe%C5%82+powiedz%C4%85+sobie+%E2%80%9Etak%E2%80%9D%2C+%C5%82%C4%85cz%C4%85c+swoje+serca+i+%C5%BCycie+na+zawsze.+Ten+dzie%C5%84+b%C4%99dzie+pocz%C4%85tkiem+ich+wsp%C3%B3lnej+drogi+pe%C5%82nej+mi%C5%82o%C5%9Bci%2C+szcz%C4%99%C5%9Bcia+i+pi%C4%99knych+chwil.&location=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Stanis%C5%82awa+BM+w+Rakoszynie%2C+28-362+Rakoszyn%2C+Polska';
+        calendarButton.href = googleCalendarUrl;
+        calendarButton.target = '_blank';
+    }
+    // Mobile: keep the default wedding.ics href
+}
+
 // Initialization on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
     updateCountdown();
@@ -176,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('carousel3D')) {
         initCarousel3D();
     }
+
+    initCalendarButton();
 });
 
 setInterval(updateCountdown, 1000);
