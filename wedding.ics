@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Viktoria & Paweł Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wedding-viktoria-pawel-20260604@vip
+DTSTAMP:20260213T211900Z
+DTSTART:20260604T130000Z
+DTEND:20260604T140000Z
+SUMMARY:Viktoria i Paweł biorą Ślub!
+DESCRIPTION:Viktoria i Paweł powiedzą sobie „tak"\, łącząc swoje serca i życie na zawsze. Ten dzień będzie początkiem ich wspólnej drogi pełnej miłości\, szczęścia i pięknych chwil.
+LOCATION:Kościół św. Stanisława BM w Rakoszynie\, 28-362 Rakoszyn\, Polska
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Viktoria i Paweł biorą Ślub jutro!
+END:VALARM
+END:VEVENT
+END:VCALENDAR
